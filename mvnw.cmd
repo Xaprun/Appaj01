@@ -58,7 +58,8 @@ set ERROR_CODE=0
 @setlocal
 
 @REM ==== START VALIDATION ====
-if not "%JAVA_HOME%" == "C:\Program Files\Java\jdk-18.0.1.1" goto OkJHome
+set JAVA_HOME=C:\Program Files\Java\jdk-18.0.1.1
+if not "%JAVA_HOME%" == "" goto OkJHome
 
 echo.
 echo Error: JAVA_HOME not found in your environment. >&2
@@ -68,7 +69,7 @@ echo.
 goto error
 
 :OkJHome
-if exist "%JAVA_HOME%\bin\java.exe" goto init
+if exist "C:\Program Files\Java\jdk-18.0.1.1" goto init
 
 echo.
 echo Error: JAVA_HOME is set to an invalid directory. >&2
